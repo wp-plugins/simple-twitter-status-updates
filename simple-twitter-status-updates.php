@@ -36,8 +36,8 @@ else{
 	define('STSU_TWITTER_ATU', 'http://twitter.com/oauth/access_token');
 	define('STSU_TWITTER_AU', 'http://twitter.com/oauth/authorize');
 	
-	define('TWITTER_CONSUMER_KEY', 'h8bj07GY4dc54JLHDZNrGw');
- 	define('TWITTER_CONSUMER_SECRET', 'juqVPgw3NCqXh1FP9hdvKNhypmjwrI1g3Zeu1g3EV0');
+	define('TWITTER_CONSUMER_KEY', 'ACTzPVc74h8wGtdyNPwDSQ');
+ 	define('TWITTER_CONSUMER_SECRET', 'kt4a8eCEnas11nvGVdljMpOljZSrsAYhjL2DvCkYT5s');
 	
 	// DEFINE other settings
 	define('STSU_PLUGIN_LOCATION', dirname(__FILE__).'/');
