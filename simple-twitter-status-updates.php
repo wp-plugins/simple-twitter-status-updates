@@ -3,8 +3,8 @@
 /*
 
 Plugin Name: Simple Twitter Status Updates
-Plugin URI: http://www.bannerweb.ch/unsere-leistungen/wordpress-dev/bannerweb-tweet-center/
-Description: Erm&ouml;glicht das automatische Aktualisieren des eigenen Twitterstatus bei der Ver&ouml;ffentlichung oder &Auml;nderung eines Blogartikels oder wenn ein neuer Kommentar zu einem Artikel geschrieben wird.
+Plugin URI: http://www.bannerweb.ch/unsere-leistungen/wordpress-dev/simple-twitter-status-updates/
+Description: Automatically publishes a status on your twitter account when a new post has been plublished or a post has been commented by an user.
 Version: 1.0
 Author: Bannerweb GmbH
 Author URI: http://www.bannerweb.ch/
