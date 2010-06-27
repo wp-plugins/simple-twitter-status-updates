@@ -30,8 +30,8 @@ if(	phpversion() < 5 or
 else{
 	
 	// DEFINE Twitter application settings
-	define('STSU_TWITTER_CK', 'h8bj07GY4dc54JLHDZNrGw');
-	define('STSU_TWITTER_CS', 'juqVPgw3NCqXh1FP9hdvKNhypmjwrI1g3Zeu1g3EV0');
+	define('STSU_TWITTER_CK', 'ACTzPVc74h8wGtdyNPwDSQ');
+	define('STSU_TWITTER_CS', 'kt4a8eCEnas11nvGVdljMpOljZSrsAYhjL2DvCkYT5s');
 	define('STSU_TWITTER_RTU', 'http://twitter.com/oauth/request_token');
 	define('STSU_TWITTER_ATU', 'http://twitter.com/oauth/access_token');
 	define('STSU_TWITTER_AU', 'http://twitter.com/oauth/authorize');
