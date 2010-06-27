@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: bannerweb
-Tags: twitter, status, updates, update, bannerweb, post, posts, page, pages, comment, commented, automatically, automatic, 
+Tags: twitter, status, updates, update, bannerweb, post, posts, page, pages, comment, commented, automatically, automatic, tweet,
 Requires at least: 2.7
 Tested up to: 3.0
 Stable tag: 1.0
@@ -11,8 +11,6 @@ Automatically publishes a status on your twitter account when a new post has bee
 
 <p>The &quot;Simple Twitter Status Updates&quot; plugin automatically publishes a status on your twitter account when a new post has been plublished or a post has been commented by an user.</p>
 <p>Keep your follwers up-to-date with what happens on your blog!</p>
-<p>&nbsp;</p>
-<p><h href="http://wordpress.org/extend/plugins/profile/bannerweb">Other plugins developed by Bannerweb</a></p>
 
 == Frequently Asked Questions ==
 
