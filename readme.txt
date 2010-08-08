@@ -3,7 +3,7 @@ Contributors: bannerweb
 Tags: twitter, status, updates, update, bannerweb, post, posts, page, pages, comment, commented, automatically, automatic, tweet,
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Automatically publishes a status on your twitter account when a new post has been plublished or a post has been commented by an user.
 
@@ -26,6 +26,9 @@ Please follow us on twitter and aks your question: <a href="http://twitter.com/b
 
 
 == Changelog ==
+
+= 1.0.1 =
+* Minor bug fix
 
 = 1.0 =
 * First public release
