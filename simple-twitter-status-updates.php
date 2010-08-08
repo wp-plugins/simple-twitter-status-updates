@@ -88,7 +88,7 @@ class STSU {
 		}
 		
 		// Add page to the admin options
-		add_options_page('Simple Twitter Status Updates', 'Twitter Updates', 'administrator', 'stsu', array('STSU', 'pageSettings'));
+		add_options_page('Simple Twitter Status Updates', 'Twitter Updates', 'manage_options', 'stsu', array('STSU', 'pageSettings'));
 		
 	}
 	
