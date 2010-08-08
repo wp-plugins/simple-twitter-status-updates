@@ -222,43 +222,43 @@ class STSU {
 		<table class="form-table">
 			<tr valign="top">
 				<th scope="row"><label for="new_post_suffix">NEW POST suffix</label></th>
-				<td><input name="new_post_suffix" id="new_post_suffix" value="
-				'.get_option('stsu_'.'new_post_suffix').'" class="regular-text code" type="text">
+				<td><input name="new_post_suffix" id="new_post_suffix" 
+				value="'.get_option('stsu_'.'new_post_suffix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="new_post_postfix">NEW POST postfix</label></th>
-				<td><input name="new_post_postfix" id="new_post_postfix" value="
-				'.get_option('stsu_'.'new_post_postfix').'" class="regular-text code" type="text">
+				<td><input name="new_post_postfix" id="new_post_postfix" 
+				value="'.get_option('stsu_'.'new_post_postfix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="modified_post_suffix">MODIFIED POST suffix</label></th>
-				<td><input name="modified_post_suffix" id="modified_post_suffix" value="
-				'.get_option('stsu_'.'modified_post_suffix').'" class="regular-text code" type="text">
+				<td><input name="modified_post_suffix" id="modified_post_suffix" 
+				value="'.get_option('stsu_'.'modified_post_suffix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="modified_post_postfix">MODIFIED POST postfix</label></th>
-				<td><input name="modified_post_postfix" id="modified_post_postfix" value="
-				'.get_option('stsu_'.'modified_post_postfix').'" class="regular-text code" type="text">
+				<td><input name="modified_post_postfix" id="modified_post_postfix" 
+				value="'.get_option('stsu_'.'modified_post_postfix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="post_comment_suffix">POST COMMENT suffix</label></th>
-				<td><input name="post_comment_suffix" id="post_comment_suffix" value="
-				'.get_option('stsu_'.'post_comment_suffix').'" class="regular-text code" type="text">
+				<td><input name="post_comment_suffix" id="post_comment_suffix" 
+				value="'.get_option('stsu_'.'post_comment_suffix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="post_comment_postfix">POST COMMENT postfix</label></th>
-				<td><input name="post_comment_postfix" id="post_comment_postfix" value="
-				'.get_option('stsu_'.'post_comment_postfix').'" class="regular-text code" type="text">
+				<td><input name="post_comment_postfix" id="post_comment_postfix" 
+				value="'.get_option('stsu_'.'post_comment_postfix').'" class="regular-text code" type="text">
 				<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
 				</td>
 			</tr>
@@ -274,15 +274,15 @@ class STSU {
 		<table class="form-table">
 			<tr valign="top">
 				<th scope="row"><label for="time_gap_general">GENERAL time gap</label></th>
-				<td><input name="time_gap_general" id="time_gap_general" value="
-				'.((!get_option('stsu_'.'time_gap_general')) ? '1800' : get_option('stsu_'.'time_gap_general') ).'" class="small-text code" type="text">
+				<td><input name="time_gap_general" id="time_gap_general" 
+				value="'.((!get_option('stsu_'.'time_gap_general')) ? '1800' : get_option('stsu_'.'time_gap_general') ).'" class="small-text code" type="text">
 				<span class="description">General time gap between two twitter status updates in <b>seconds</b></span>
 				</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="time_gap_post">POST time gap</label></th>
-				<td><input name="time_gap_post" id="time_gap_post" value="
-				'.((!get_option('stsu_'.'time_gap_post')) ? '1800' : get_option('stsu_'.'time_gap_post') ).'" class="small-text code" type="text">
+				<td><input name="time_gap_post" id="time_gap_post" 
+				value="'.((!get_option('stsu_'.'time_gap_post')) ? '1800' : get_option('stsu_'.'time_gap_post') ).'" class="small-text code" type="text">
 				<span class="description">General time gap between two twitter status updates in <b>seconds</b> for the same post (don\'t mind if new, modified or commented) </span>
 				</td>
 			</tr>
