@@ -60,6 +60,8 @@ function stsu_compatibility_notice(){
 	- PHP 5.2 or higher<br />
 	- PHP extension CURL activated</p>
 	
+	<p>Do you need help? Contact us on twitter <a href="http://twitter.com/bannerweb">@bannerweb</a></p>
+	
 	</div>';
 }
 
