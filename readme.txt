@@ -3,7 +3,7 @@ Contributors: bannerweb
 Tags: twitter, status, updates, update, bannerweb, post, posts, page, pages, comment, commented, automatically, automatic, tweet,
 Requires at least: 2.7
 Tested up to: 3.0
-Stable tag: 1.1
+Stable tag: 1.2
 
 Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by an user.
 
@@ -17,7 +17,7 @@ Automatically publishes a status on your twitter account when a post has been pl
 
 Do you have questions or issues with the &quot;Simple Twitter Status Updates&quot; plugin?
 
-Please follow us on twitter and ask your question: <a href="http://twitter.com/bannerweb">@bannerweb</a>
+Please follow us on twitter and ask your question: [@bannerweb](http://twitter.com/bannerweb "@bannerweb")
 
 
 == Installation ==
@@ -28,6 +28,9 @@ Please follow us on twitter and ask your question: <a href="http://twitter.com/b
 
 
 == Changelog ==
+
+= 1.2 =
+* Major Bug fix: plugin somtimes crashed trying to update a twitter status
 
 = 1.1 =
 * Added the latest twitter-async class files
