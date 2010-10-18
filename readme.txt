@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: bannerweb
 Tags: twitter, status, updates, update, bannerweb, post, posts, page, pages, comment, commented, automatically, automatic, tweet,
-Requires at least: 2.7
+Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: 1.2
 
