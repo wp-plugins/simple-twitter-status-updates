@@ -30,7 +30,7 @@ Please follow us on twitter and ask your question: [@bannerweb](http://twitter.c
 == Changelog ==
 
 = 1.3 =
-* Login feature added (see what the plugin is doing)
+* Logging feature added (see what the plugin is doing)
 * Improved compatibility check
 * Bug fixes
 
