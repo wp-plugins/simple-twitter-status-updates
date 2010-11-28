@@ -7,8 +7,6 @@ define('STSU_TWITTER_RTU', 'http://twitter.com/oauth/request_token');
 define('STSU_TWITTER_ATU', 'http://twitter.com/oauth/access_token');
 define('STSU_TWITTER_AU', 'http://twitter.com/oauth/authorize');
 
-define('STSU_PLUGIN_WWW', get_bloginfo('url').'/wp-content/plugins/simple-twitter-status-updates/');
-
 define('TWITTER_CONSUMER_KEY', 'ACTzPVc74h8wGtdyNPwDSQ');
 define('TWITTER_CONSUMER_SECRET', 'kt4a8eCEnas11nvGVdljMpOljZSrsAYhjL2DvCkYT5s');
 
@@ -34,6 +32,9 @@ class STSU {
 	// Register settings page
 	public function buildAdminMenu(){
 		
+		// Create new STSU Object
+		$objSTSU = new STSU();
+		
 		// Check if twitter auth-token has been created
 		if(!get_option('stsu_twitter_auth_token') and $_GET['page'] != 'stsu'){
 			
@@ -44,6 +45,8 @@ class STSU {
 		// Add page to the admin options
 		add_options_page('Simple Twitter Status Updates', 'Twitter Updates', 'manage_options', 'stsu', array('STSU', 'pageSettings'));
 		
+		// Delete log entries (only when user is logged in the WP backend)
+		$objSTSU->deleteLogEntries();
 	}
 	
 	// STSU Shutdown Event
@@ -88,8 +91,28 @@ class STSU {
 	// Delete old log entries from database
 	public function deleteLogEntries(){
 		
-		// Not yet written!
-		// Added in version 1.4
+		// Get needed data
+		$int_deleted_log_id = (get_option('stsu_deleted_log_id') > 0) ? get_option('stsu_deleted_log_id') : 1;
+		$int_current_log_id = get_option('stsu_current_log_id');
+		$int_max_log_entries = get_option('stsu_log_lenght');
+		
+		// Check if there should log entries be deleted
+		if($int_deleted_log_id < ($int_current_log_id - $int_max_log_entries)){
+			
+			// Delete log entries
+			for($i = $int_deleted_log_id; $i <= ($int_current_log_id - $int_max_log_entries); $i++){
+				
+				// Delete from database
+				delete_option('stsu_log_entry_'.$i);
+			}
+		}
+		
+		// Calculate new delete log id
+		$int_deleted_log_id = ($int_current_log_id - $int_max_log_entries + 1);
+		
+		// Save deleted log id
+		update_option('stsu_deleted_log_id', $int_deleted_log_id);
+		
 	}
 	
 	// User settings, twitter oauth authentication (GUI)
@@ -150,6 +173,8 @@ class STSU {
 				
 				$tmp_arr_log = explode('[STSU_LOG]', get_option('stsu_log_entry_'.$i));
 				
+				if(!$tmp_arr_log[2]){ continue; }
+
 				echo '
 				<tr>
 					<td scope="col"><img src="'.STSU_PLUGIN_WWW.'images/'.$tmp_arr_log[2].'.png" alt="" title="'.$tmp_arr_log[2].'" /></td>
@@ -186,6 +211,13 @@ class STSU {
 			
 				// Reset twitter screen name
 				update_option('stsu_twitter_screen_name', '');
+			}
+			
+			// Remove Twitter Authentication
+			else if($_GET['action'] == 'donate'){
+				
+				// Display saved message
+				echo '<div id="message" class="updated"><p>Thanks for your donation!</p></div>';
 			}
 			
 			// Save data
@@ -412,6 +444,44 @@ class STSU {
 			</form>
 			
 			<p>&nbsp;</p>
+			
+			
+			<h3>Donate using moneybookers.com</h3>
+			
+			<p>Help us to keep this plugin up-to-date, to add more features, to give free support and to fix bugs with just a small amount of money.</p>
+			
+			<form action="https://www.moneybookers.com/app/payment.pl?rid=6315314" method="post" target="_blank">
+			
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row"><label for="currency">Currency</label></th>
+					<td><select name="currency" id="currency" size="1">
+						<option value="CHF">Swiss francs (CHF)</option>
+						<option value="EUR">Euro (EUR)</option>
+						<option value="USD">US dollar (USD)</option>
+						<option value="GBP">GB pound (GBP)</option>
+					</select>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><label for="amount">Amount</label></th>
+					<td><input name="amount" id="amount" value="5.00" class="small-text code" type="text">
+					</td>
+				</tr>
+			</table>
+			
+			<input type="hidden" name="pay_to_email" value="kontakt@bannerweb.ch">
+			<input type="hidden" name="return_url" value="'.get_bloginfo('url').'/wp-admin/options-general.php?page=stsu&action=donate">
+			<input type="hidden" name="language" value="EN">
+			<input type="hidden" name="detail1_description" value="Donate">
+			<input type="hidden" name="detail1_text" value="Help support the WordPress plugin \'Simple Twitter Status Updates\'">
+			
+			<p><input type="submit" class="button" name="donate" value="Donate now!" /></p>
+			
+			</form> 
+
+			<p>&nbsp;</p>
+			
 			';
 		}
 	}

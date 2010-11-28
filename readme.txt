@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: bannerweb
-Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log
+Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.3
+Stable tag: 1.3.1
 
 Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by an user.
 
@@ -28,6 +28,10 @@ Please follow us on twitter and ask your question: [@bannerweb](http://twitter.c
 
 
 == Changelog ==
+
+= 1.3.1 =
+* Improved compatibility check
+* Bug fixes
 
 = 1.3 =
 * Logging feature added (see what the plugin is doing)
