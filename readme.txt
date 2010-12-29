@@ -40,9 +40,6 @@ Please follow us on twitter and ask: [@bannerweb](http://twitter.com/bannerweb "
 * Added bit.ly as URL shortener
 * Bug fixes
 
-= 1.3.2 =
-* Bug fixes
-
 = 1.3.1 =
 * Improved compatibility check
 * Bug fixes
