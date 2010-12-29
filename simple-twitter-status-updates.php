@@ -4,8 +4,8 @@
 
 Plugin Name: Simple Twitter Status Updates
 Plugin URI: http://www.bannerweb.ch/unsere-leistungen/wordpress-dev/simple-twitter-status-updates/
-Description: Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by an user.
-Version: 1.3.1
+Description: Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
+Version: 1.4
 Author: Bannerweb GmbH
 Author URI: http://www.bannerweb.ch/
 
@@ -121,9 +121,9 @@ function stsu_incompatibility_notification(){
 		<i>('.((!ini_get('safe_mode')) ? 'Save mode is turned OFF' : 'Save mode is turned ON').')</i></td>
 	</tr>
 	<tr>
-		<td style="width: 25px;"><img src="'.STSU_PLUGIN_WWW.'images/'.((!ini_get('open_basedir')) ? 'success' : 'alert').'.png" alt="" title="'.$tmp_arr_log[2].'" /></td>
+		<td style="width: 25px;"><img src="'.STSU_PLUGIN_WWW.'images/'.((!ini_get('open_basedir')) ? 'success' : 'warning').'.png" alt="" title="'.$tmp_arr_log[2].'" /></td>
 		<td>The php.ini value OPEN_BASEDIR must be empty
-		<i>('.((!ini_get('open_basedir')) ? 'OPEN_BASEDIR is empty' : 'OPEN_BASEDIR is set with following value ['.ini_get('open_basedir').']').')</i></td>
+		<i>('.((!ini_get('open_basedir')) ? 'OPEN_BASEDIR is empty' : 'OPEN_BASEDIR is set with following value ['.ini_get('open_basedir').']').') [should not be a problem but sometimes is one]</i></td>
 	</tr>
 	</table>
 	
@@ -138,7 +138,6 @@ if(	$int_wp_version >= 300000000 and 		// Wordpress version > 2.7
 	$int_php_version >= 520000000 and 		// PHP version > 5.2
 	$int_curl_version >= 700000000 and 		// CURL version > 7.0
 	!ini_get('safe_mode') and				// SAVE_MODE is turned OFF
-	!ini_get('open_basedir') and			// OPEN_BASEDIR is empty
 	defined('ABSPATH') and 					// Plugin is not loaded directly
 	defined('WPINC')){						// Plugin is not loaded directly
 		

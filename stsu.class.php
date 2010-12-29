@@ -193,6 +193,19 @@ class STSU {
 			
 			<p>&nbsp;</p>
 			
+			<h3>Donate</h3>
+			
+			<p>Help us to keep this plugin up-to-date, to add more features, to give free support and to fix bugs with just a small amount of money.</p>
+			
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="9HCY5XJ343NCC">
+			<input type="image" src="https://www.paypal.com/en_US/CH/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+
+			<p>&nbsp;</p>
+			
 			</div>';
 		}
 		
@@ -213,13 +226,6 @@ class STSU {
 				update_option('stsu_twitter_screen_name', '');
 			}
 			
-			// Remove Twitter Authentication
-			else if($_GET['action'] == 'donate'){
-				
-				// Display saved message
-				echo '<div id="message" class="updated"><p>Thanks for your donation!</p></div>';
-			}
-			
 			// Save data
 			if($_POST['stsu_settings']){
 				
@@ -228,7 +234,7 @@ class STSU {
 				update_option('stsu_'.'comment_post', preg_replace('#[^0-9]#', '', $_POST['comment_post']));
 				update_option('stsu_'.'post_modify', preg_replace('#[^0-9]#', '', $_POST['post_modify']));
 				
-				// Postfix and Suffix
+				// Postfix and Suffix // Postfix == suffix // postfix = prefix :-(
 				update_option('stsu_'.'new_post_suffix', htmlspecialchars($_POST['new_post_suffix']));
 				update_option('stsu_'.'new_post_postfix', htmlspecialchars($_POST['new_post_postfix']));
 				update_option('stsu_'.'post_comment_suffix', htmlspecialchars($_POST['post_comment_suffix']));
@@ -239,6 +245,9 @@ class STSU {
 				// Update time intervall
 				update_option('stsu_'.'time_gap_general', preg_replace('#[^0-9]#', '', $_POST['time_gap_general']));
 				update_option('stsu_'.'time_gap_post', preg_replace('#[^0-9]#', '', $_POST['time_gap_post']));
+				
+				// URL shortener
+				update_option('stsu_'.'url_shortener_bitly', preg_replace('#[^0-9]#', '', $_POST['url_shortener_bitly']));
 				
 				// Update log settings
 				update_option('stsu_'.'log_enabled', preg_replace('#[^0-9]#', '', $_POST['log_enabled']));
@@ -273,12 +282,12 @@ class STSU {
 			<div id="icon-options-general" class="icon32"><br></div>
 			<h2>Settings &gt; Simple Twitter Status Updates</h2></div>
 			
-			<h3>How does ist work?</h3>
+			<h3>How does it work?</h3>
 			
-			<p>The "Simple Twitter Status Updates" plugin automatically publishes a status on your twitter account when a new post has been plublished or a post has been commented by an user.<br />
+			<p>The "Simple Twitter Status Updates" WordPress plugin automatically publishes a status on your twitter account when a new post has been plublished, modified or commented by an user.<br />
 			Keep your follwers up-to-date with what happens on your blog!</p>
 			
-			<p>Visit <a href="http://www.bannerweb.ch/das-unternehmen/kontakt/">www.bannerweb.ch</a> for further information, to give us a feedback or to get support!</p>
+			<p>Visit <a href="http://www.bannerweb.ch/das-unternehmen/kontakt/">www.bannerweb.ch</a> for further information to give us a feedback or to get support!</p>
 			
 			<p>&nbsp;</p>
 			<h3>Twitter authentication (oAuth)</h3>';
@@ -318,7 +327,7 @@ class STSU {
 					<label for="post_new">
 					<input name="post_new" id="post_new" value="1" type="checkbox"
 					'.((get_option('stsu_'.'post_new') == 1) ? 'checked="checked"' : false ).'>
-					Publish twitter status when publishing a NEW POST</label>
+					Publish a twitter status when publishing a NEW POST</label>
 					</th>
 				</tr>
 				<tr>
@@ -326,7 +335,7 @@ class STSU {
 					<label for="post_modify">
 					<input name="post_modify" id="post_modify" value="1" type="checkbox"
 					'.((get_option('stsu_'.'post_modify') == 1) ? 'checked="checked"' : false ).'>
-					Publish twitter status when a POST has been MODIFIED</label>
+					Publish a twitter status when a POST has been MODIFIED</label>
 					</th>
 				</tr>
 				<tr>
@@ -334,7 +343,7 @@ class STSU {
 					<label for="comment_post">
 					<input name="comment_post" id="comment_post" value="1" type="checkbox"
 					'.((get_option('stsu_'.'comment_post') == 1) ? 'checked="checked"' : false ).'>
-					Publish twitter status when there is a NEW COMMENT on a POST</label>
+					Publish a twitter status when there is a NEW COMMENT on a POST</label>
 					</th>
 				</tr>
 			</table>
@@ -342,46 +351,46 @@ class STSU {
 			<p><input type="submit" class="button" name="stsu_settings" value="save changes" /></p>
 			
 			<p>&nbsp;</p>
-			<h3>Postfix and Suffix</h3>
+			<h3>Prefix and suffix</h3>
 			
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row"><label for="new_post_suffix">NEW POST suffix</label></th>
+					<th scope="row"><label for="new_post_suffix">NEW POST prefix</label></th>
 					<td><input name="new_post_suffix" id="new_post_suffix" 
 					value="'.get_option('stsu_'.'new_post_suffix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="new_post_postfix">NEW POST postfix</label></th>
+					<th scope="row"><label for="new_post_postfix">NEW POST suffix</label></th>
 					<td><input name="new_post_postfix" id="new_post_postfix" 
 					value="'.get_option('stsu_'.'new_post_postfix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="modified_post_suffix">MODIFIED POST suffix</label></th>
+					<th scope="row"><label for="modified_post_suffix">MODIFIED POST prefix</label></th>
 					<td><input name="modified_post_suffix" id="modified_post_suffix" 
 					value="'.get_option('stsu_'.'modified_post_suffix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="modified_post_postfix">MODIFIED POST postfix</label></th>
+					<th scope="row"><label for="modified_post_postfix">MODIFIED POST suffix</label></th>
 					<td><input name="modified_post_postfix" id="modified_post_postfix" 
 					value="'.get_option('stsu_'.'modified_post_postfix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="post_comment_suffix">POST COMMENT suffix</label></th>
+					<th scope="row"><label for="post_comment_suffix">POST COMMENT prefix</label></th>
 					<td><input name="post_comment_suffix" id="post_comment_suffix" 
 					value="'.get_option('stsu_'.'post_comment_suffix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>before</b> the link to the post</span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="post_comment_postfix">POST COMMENT postfix</label></th>
+					<th scope="row"><label for="post_comment_postfix">POST COMMENT suffix</label></th>
 					<td><input name="post_comment_postfix" id="post_comment_postfix" 
 					value="'.get_option('stsu_'.'post_comment_postfix').'" class="regular-text code" type="text">
 					<span class="description">Will be added to the twitter status <b>after</b> the link to the post</span>
@@ -394,7 +403,7 @@ class STSU {
 			<p>&nbsp;</p>
 			<h3>Update time intervall</h3>
 			
-			<p>To prevent your twitter stream from beeing flooded by a uncountable number of status updates by your blog, your can set minimal time gaps between two updates.</p>
+			<p>To prevent your twitter stream from being flooded by a uncountable number of status updates from your blog you can set minimal time gaps between two updates.</p>
 			
 			<table class="form-table">
 				<tr valign="top">
@@ -416,6 +425,22 @@ class STSU {
 			<p><input type="submit" class="button" name="stsu_settings" value="save changes" /></p>
 			
 			<p>&nbsp;</p>
+			<h3>URL shortener</h3>
+		
+			<table class="form-table">
+				<tr>
+					<th scope="row" colspan="2" class="th-full">
+					<label for="url_shortener_bitly">
+					<input name="url_shortener_bitly" id="url_shortener_bitly" value="1" type="checkbox"
+					'.((get_option('stsu_'.'url_shortener_bitly') == 1) ? 'checked="checked"' : false ).'>
+					Use bit.ly as URL shortener (http://bit.ly/abc12) instead of the original blog URL ('.home_url().'/?p=123)</label>
+					</th>
+				</tr>
+			</table>
+			
+			<p><input type="submit" class="button" name="stsu_settings" value="save changes" /></p>
+			
+			<p>&nbsp;</p>
 			<h3>Status update log</h3>
 			
 			<p>Enable the status update log to find out why status updates won\'t be published on twitter.</p>
@@ -431,7 +456,7 @@ class STSU {
 					</th>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="log_lenght">POST time gap</label></th>
+					<th scope="row"><label for="log_lenght">Log lenght</label></th>
 					<td><input name="log_lenght" id="log_lenght" 
 					value="'.((!get_option('stsu_'.'log_lenght')) ? '100' : get_option('stsu_'.'log_lenght') ).'" class="small-text code" type="text">
 					<span class="description">Maximum number of logged events (default: 100)</span>
@@ -446,39 +471,16 @@ class STSU {
 			<p>&nbsp;</p>
 			
 			
-			<h3>Donate using moneybookers.com</h3>
+			<h3>Donate</h3>
 			
 			<p>Help us to keep this plugin up-to-date, to add more features, to give free support and to fix bugs with just a small amount of money.</p>
 			
-			<form action="https://www.moneybookers.com/app/payment.pl?rid=6315314" method="post" target="_blank">
-			
-			<table class="form-table">
-				<tr valign="top">
-					<th scope="row"><label for="currency">Currency</label></th>
-					<td><select name="currency" id="currency" size="1">
-						<option value="CHF">Swiss francs (CHF)</option>
-						<option value="EUR">Euro (EUR)</option>
-						<option value="USD">US dollar (USD)</option>
-						<option value="GBP">GB pound (GBP)</option>
-					</select>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><label for="amount">Amount</label></th>
-					<td><input name="amount" id="amount" value="5.00" class="small-text code" type="text">
-					</td>
-				</tr>
-			</table>
-			
-			<input type="hidden" name="pay_to_email" value="kontakt@bannerweb.ch">
-			<input type="hidden" name="return_url" value="'.get_bloginfo('url').'/wp-admin/options-general.php?page=stsu&action=donate">
-			<input type="hidden" name="language" value="EN">
-			<input type="hidden" name="detail1_description" value="Donate">
-			<input type="hidden" name="detail1_text" value="Help support the WordPress plugin \'Simple Twitter Status Updates\'">
-			
-			<p><input type="submit" class="button" name="donate" value="Donate now!" /></p>
-			
-			</form> 
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="9HCY5XJ343NCC">
+			<input type="image" src="https://www.paypal.com/en_US/CH/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
 
 			<p>&nbsp;</p>
 			
@@ -512,7 +514,7 @@ class STSU {
 				$int_usable_lenght = 140 - $int_prefix_lenght - $int_postfix_lenght;
 				
 				// Get URL of current post
-				$str_post_url = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE ID = '".$int_id_post."'");
+				$str_post_url = $objSTSU->getAndShortenURL($int_id_post);
 				
 				// Calculate avilable title lenght
 				$int_usable_lenght =  $int_usable_lenght - (strlen($str_post_url) + 2);
@@ -568,7 +570,7 @@ class STSU {
 						$int_usable_lenght = 140 - $int_prefix_lenght - $int_postfix_lenght;
 						
 						// Get URL of current post
-						$str_post_url = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE ID = '".$int_id_post."'");
+						$str_post_url = $objSTSU->getAndShortenURL($int_id_post);
 						
 						// Calculate avilable title lenght
 						$int_usable_lenght =  $int_usable_lenght - (strlen($str_post_url) + 2);
@@ -659,7 +661,7 @@ class STSU {
 							$int_usable_lenght = 140 - $int_prefix_lenght - $int_postfix_lenght;
 							
 							// Get URL of current post
-							$str_post_url = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE ID = '".$int_id_post."'");
+							$str_post_url = $objSTSU->getAndShortenURL($int_id_post);
 							
 							// Calculate avilable title lenght
 							$int_usable_lenght =  $int_usable_lenght - (strlen($str_post_url) + 2);
@@ -758,7 +760,7 @@ class STSU {
 						$int_usable_lenght = 140 - $int_prefix_lenght - $int_postfix_lenght;
 						
 						// Get URL of current post
-						$str_post_url = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE ID = '".$int_id_post."'");
+						$str_post_url = $objSTSU->getAndShortenURL($int_id_post);
 						
 						// Calculate avilable title lenght
 						$int_usable_lenght =  $int_usable_lenght - (strlen($str_post_url) + 2);
@@ -809,6 +811,53 @@ class STSU {
 				$objSTSU->addLogEntry('information', 'Sending status update for a new comment is not neccessary (not activated)');
 			}
 		}
+	}
+	
+	// Calculate the post URL, shrink if neccessary and return it
+	public function getAndShortenURL($int_id_post){
+		
+		// Objects
+		$objSTSU = new STSU();
+		
+		// Variables
+		global $wpdb;
+		$str_url;
+		
+		// Get URL of current post
+		$str_url = $wpdb->get_var("SELECT guid FROM $wpdb->posts WHERE ID = '".$int_id_post."'");
+		
+		// Check if URL must be shortened
+		if(get_option('stsu_url_shortener_bitly') == 1){
+			
+			// Get the permalink
+			$str_url = get_permalink($int_id_post);
+			
+			// Shorten URL using bit.ly
+			$objCURL = curl_init('http://bit.ly/api?url='.$str_url);
+		   	curl_setopt($objCURL, CURLOPT_TIMEOUT, 10);
+		   	curl_setopt($objCURL, CURLOPT_RETURNTRANSFER, 1);
+		   	$str_curl_response = curl_exec($objCURL);
+		   	curl_close($objCURL);
+		
+		   	// Check result
+		   	if($str_curl_response){
+		   		
+		   			// Save generated URL
+		   			$str_url = $str_curl_response;
+		   			
+		   			// Add status message
+		   			$objSTSU->addLogEntry('success', 'Received bit.ly URL ('.$str_url.')');
+		   	}  	
+		   	
+		   	else{
+		   		
+		   		// Add status message
+		   		$objSTSU->addLogEntry('warning', 'bit.ly URL shortening failed: request timed out');
+		   	}
+		}
+		
+		// Return URL
+		return $str_url;
 	}
 	
 	// Sends a status updat to twitter

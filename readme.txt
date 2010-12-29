@@ -3,21 +3,27 @@ Contributors: bannerweb
 Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.3.1
+Stable tag: 1.4
 
-Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by an user.
+Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
 
 == Description ==
 
-<p>The &quot;Simple Twitter Status Updates&quot; plugin automatically publishes a status on your twitter account when a post has been plublished, modified or commented by an user.</p>
-<p>The &quot;Simple Twitter Status Updates&quot; plugin is configured in just a few easy clicks and gets connected with your twitter account using oAuth. That means: you dont need to commit your twitter password!</p>
+<p>The &quot;Simple Twitter Status Updates&quot; WordPress plugin automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.</p>
+<p>The &quot;Simple Twitter Status Updates&quot; plugin is configured in with just a few easy clicks and gets connected to your twitter account using oAuth. That means: you dont need to give away your twitter password!</p>
 <p>Keep your follwers up-to-date with what happens on your blog!</p>
+= Features =
+* Automatic twitter status updates from your blog
+* Twitter authentication using oAuth (don't give away your twitter account password)
+* Prefix and suffix for every status update
+* Automatic URL shortening using bit.ly
+* Event log (see what the plugin is doing)
 
 == Frequently Asked Questions ==
 
-Do you have questions or issues with the &quot;Simple Twitter Status Updates&quot; plugin?
+Do you have any questions or issues with the &quot;Simple Twitter Status Updates&quot; plugin?
 
-Please follow us on twitter and ask your question: [@bannerweb](http://twitter.com/bannerweb "@bannerweb")
+Please follow us on twitter and ask: [@bannerweb](http://twitter.com/bannerweb "@bannerweb")
 
 
 == Installation ==
@@ -25,9 +31,17 @@ Please follow us on twitter and ask your question: [@bannerweb](http://twitter.c
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Authenticate the &quot;Simple Twitter Status Updates&quot; to allow automatically status updates on your twitter timeline
 4. Define the plugin settings (Settings -> Twitter Updates) as you like and watch it working!
+5. Donate to help us improve the functionality and features of the plugin!
 
 
 == Changelog ==
+
+= 1.4 =
+* Added bit.ly as URL shortener
+* Bug fixes
+
+= 1.3.2 =
+* Bug fixes
 
 = 1.3.1 =
 * Improved compatibility check
