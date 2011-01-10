@@ -3,7 +3,7 @@ Contributors: bannerweb
 Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 1.4
+Stable tag: 1.4.1
 
 Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
 
@@ -35,6 +35,9 @@ Please follow us on twitter and ask: [@bannerweb](http://twitter.com/bannerweb "
 
 
 == Changelog ==
+
+= 1.4.1 =
+* Bug fix [Thread](http://wordpress.org/support/topic/plugin-simple-twitter-status-updates-scrambled-my-dashboard "Thread")
 
 = 1.4 =
 * Added bit.ly as URL shortener

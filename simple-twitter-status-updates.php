@@ -5,7 +5,7 @@
 Plugin Name: Simple Twitter Status Updates
 Plugin URI: http://www.bannerweb.ch/unsere-leistungen/wordpress-dev/simple-twitter-status-updates/
 Description: Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
-Version: 1.4
+Version: 1.4.1
 Author: Bannerweb GmbH
 Author URI: http://www.bannerweb.ch/
 
@@ -38,11 +38,14 @@ while(strlen($int_php_version) < 9){
 // Check if CURL is loaded, get version number and fill it up to 9 digits
 if(extension_loaded('curl') === true){
 	
-	$arr_curl_version = curl_version();
-	$int_curl_version = preg_replace('#[^0-9]#', '', $arr_curl_version['version']);
-	while(strlen($int_curl_version) < 9){
-		
-		$int_curl_version .= '0'; 
+	if(function_exists('curl_version')){
+	
+		$arr_curl_version = curl_version();
+		$int_curl_version = preg_replace('#[^0-9]#', '', $arr_curl_version['version']);
+		while(strlen($int_curl_version) < 9){
+			
+			$int_curl_version .= '0'; 
+		}
 	}
 }
 
