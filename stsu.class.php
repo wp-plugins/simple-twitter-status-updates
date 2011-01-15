@@ -297,7 +297,7 @@ class STSU {
 				
 				// Generate oAuth URL
 				$objTwitter = new EpiTwitter(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET);
-				$str_request_token = $objTwitter->getRequestToken(array('oauth_callback' => get_bloginfo('url').'/wp-admin/options-general.php?page=stsu'));
+				$str_request_token = $objTwitter->getRequestToken(array('oauth_callback' => get_bloginfo('wpurl').'/wp-admin/options-general.php?page=stsu'));
 				$str_request_url = $objTwitter->getAuthenticateUrl($str_request_token);
 				
 		

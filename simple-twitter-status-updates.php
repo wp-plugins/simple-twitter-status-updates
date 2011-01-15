@@ -5,7 +5,7 @@
 Plugin Name: Simple Twitter Status Updates
 Plugin URI: http://www.bannerweb.ch/unsere-leistungen/wordpress-dev/simple-twitter-status-updates/
 Description: Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
-Version: 1.4.1
+Version: 1.4.2
 Author: Bannerweb GmbH
 Author URI: http://www.bannerweb.ch/
 
@@ -14,7 +14,7 @@ Author URI: http://www.bannerweb.ch/
 
 # Define settings
 # -----------------------------------------------------
-define('STSU_PLUGIN_WWW', get_bloginfo('url').'/wp-content/plugins/simple-twitter-status-updates/');
+define('STSU_PLUGIN_WWW', get_bloginfo('wpurl').'/wp-content/plugins/simple-twitter-status-updates/');
 
 
 
@@ -125,7 +125,7 @@ function stsu_incompatibility_notification(){
 	</tr>
 	<tr>
 		<td style="width: 25px;"><img src="'.STSU_PLUGIN_WWW.'images/'.((!ini_get('open_basedir')) ? 'success' : 'warning').'.png" alt="" title="'.$tmp_arr_log[2].'" /></td>
-		<td>The php.ini value OPEN_BASEDIR must be empty
+		<td>The php.ini value OPEN_BASEDIR should be empty
 		<i>('.((!ini_get('open_basedir')) ? 'OPEN_BASEDIR is empty' : 'OPEN_BASEDIR is set with following value ['.ini_get('open_basedir').']').') [should not be a problem but sometimes is one]</i></td>
 	</tr>
 	</table>
