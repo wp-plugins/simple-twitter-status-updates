@@ -1,5 +1,6 @@
 === Plugin Name ===
 Contributors: bannerweb
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HCY5XJ343NCC
 Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
 Tested up to: 3.0
