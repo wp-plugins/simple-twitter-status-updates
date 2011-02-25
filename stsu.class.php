@@ -833,7 +833,7 @@ class STSU {
 			$str_url = get_permalink($int_id_post);
 			
 			// Shorten URL using bit.ly
-			$objCURL = curl_init('http://bit.ly/api?url='.$str_url);
+			$objCURL = curl_init('http://api.bitly.com/v3/shorten?login=bannerweb&apiKey=R_f91c20da38d3b038a096255e701290cd&longUrl='.$str_url.'&format=json');
 		   	curl_setopt($objCURL, CURLOPT_TIMEOUT, 10);
 		   	curl_setopt($objCURL, CURLOPT_RETURNTRANSFER, 1);
 		   	$str_curl_response = curl_exec($objCURL);
@@ -843,7 +843,8 @@ class STSU {
 		   	if($str_curl_response){
 		   		
 		   			// Save generated URL
-		   			$str_url = $str_curl_response;
+		   			$arr_response = json_decode($str_curl_response);
+		   			$str_url = $arr_response->data->url;
 		   			
 		   			// Add status message
 		   			$objSTSU->addLogEntry('success', 'Received bit.ly URL ('.$str_url.')');

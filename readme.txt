@@ -3,8 +3,8 @@ Contributors: bannerweb
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HCY5XJ343NCC
 Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 1.4.2
+Tested up to: 3.1
+Stable tag: 1.4.2.1
 
 Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
 
@@ -19,6 +19,17 @@ Automatically publishes a status on your twitter account when a post has been pl
 * Prefix and suffix for every status update
 * Automatic URL shortening using bit.ly
 * Event log (see what the plugin is doing)
+
+= Requirements =
+* WordPress 3.0 or higher
+* PHP 5.2 or higher
+* PHP extension CURL version 7.0 or higher
+* PHP save mode must be turned OFF
+* The php.ini value OPEN_BASEDIR should be empty (should not be a problem but sometimes is one)
+
+= Other Bannerweb Plugins =
+* [Simple Mail Address Encoder](http://wordpress.org/extend/plugins/simple-mail-address-encoder/ "Simple Mail Address Encoder")
+* [Simple WordPress Backup](http://wordpress.org/extend/plugins/simple-wordpress-backup/ "Simple WordPress Backup")
 
 == Frequently Asked Questions ==
 
@@ -36,6 +47,10 @@ Please follow us on twitter and ask: [@bannerweb](http://twitter.com/bannerweb "
 
 
 == Changelog ==
+
+= 1.4.2.1 =
+* Bug fix: bit.ly API change
+
 
 = 1.4.2 =
 * [Bug fix](http://wordpress.org/support/topic/plugin-simple-twitter-status-updates-does-not-work-if-wp-304-update-is-installed-first "Bug fix")
