@@ -242,7 +242,7 @@ class STSU {
 				update_option('stsu_'.'modified_post_suffix', htmlspecialchars($_POST['modified_post_suffix']));
 				update_option('stsu_'.'modified_post_postfix', htmlspecialchars($_POST['modified_post_postfix']));
 				
-				// Update time intervall
+				// Update time interval
 				update_option('stsu_'.'time_gap_general', preg_replace('#[^0-9]#', '', $_POST['time_gap_general']));
 				update_option('stsu_'.'time_gap_post', preg_replace('#[^0-9]#', '', $_POST['time_gap_post']));
 				
@@ -284,8 +284,8 @@ class STSU {
 			
 			<h3>How does it work?</h3>
 			
-			<p>The "Simple Twitter Status Updates" WordPress plugin automatically publishes a status on your twitter account when a new post has been plublished, modified or commented by an user.<br />
-			Keep your follwers up-to-date with what happens on your blog!</p>
+			<p>The "Simple Twitter Status Updates" WordPress plugin automatically publishes a status on your twitter account when a new post has been published, modified or commented by an user.<br />
+			Keep your followers up-to-date with what happens on your blog!</p>
 			
 			<p>Visit <a href="http://www.bannerweb.ch/das-unternehmen/kontakt/">www.bannerweb.ch</a> for further information to give us a feedback or to get support!</p>
 			
@@ -401,16 +401,16 @@ class STSU {
 			<p><input type="submit" class="button" name="stsu_settings" value="save changes" /></p>
 			
 			<p>&nbsp;</p>
-			<h3>Update time intervall</h3>
+			<h3>Update time interval</h3>
 			
-			<p>To prevent your twitter stream from being flooded by a uncountable number of status updates from your blog you can set minimal time gaps between two updates.</p>
+			<p>To prevent your twitter stream from being flooded by an uncountable number of status updates from your blog you can set minimal time gaps between two updates.</p>
 			
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row"><label for="time_gap_general">GENERAL time gap</label></th>
 					<td><input name="time_gap_general" id="time_gap_general" 
 					value="'.((!get_option('stsu_'.'time_gap_general')) ? '1800' : get_option('stsu_'.'time_gap_general') ).'" class="small-text code" type="text">
-					<span class="description">General time gap between two twitter status updates in <b>seconds</b> (new post updates will always be updated wehn activated)</span>
+					<span class="description">General time gap between two twitter status updates in <b>seconds</b> (new post updates will always be updated when activated)</span>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -452,11 +452,11 @@ class STSU {
 					<label for="log_enabled">
 					<input name="log_enabled" id="log_enabled" value="1" type="checkbox"
 					'.((get_option('stsu_'.'log_enabled') == 1) ? 'checked="checked"' : false ).'>
-					Enable status update logging (critical errors allways get logged)</label>
+					Enable status update logging (critical errors always get logged)</label>
 					</th>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="log_lenght">Log lenght</label></th>
+					<th scope="row"><label for="log_lenght">Log length</label></th>
 					<td><input name="log_lenght" id="log_lenght" 
 					value="'.((!get_option('stsu_'.'log_lenght')) ? '100' : get_option('stsu_'.'log_lenght') ).'" class="small-text code" type="text">
 					<span class="description">Maximum number of logged events (default: 100)</span>

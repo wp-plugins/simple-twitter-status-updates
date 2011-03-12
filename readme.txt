@@ -4,15 +4,15 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: twitter, status, updates, update, bannerweb, post, posts, comment, commented, automatically, automatic, tweet, log, simple
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.4.2.1
+Stable tag: 1.4.2.2
 
-Automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.
+Automatically publishes a status on your twitter account when a post has been published, modified or commented by a user.
 
 == Description ==
 
-<p>The &quot;Simple Twitter Status Updates&quot; WordPress plugin automatically publishes a status on your twitter account when a post has been plublished, modified or commented by a user.</p>
+<p>The &quot;Simple Twitter Status Updates&quot; WordPress plugin automatically publishes a status on your twitter account when a post has been published, modified or commented by a user.</p>
 <p>The &quot;Simple Twitter Status Updates&quot; plugin is configured in with just a few easy clicks and gets connected to your twitter account using oAuth. That means: you dont need to give away your twitter password!</p>
-<p>Keep your follwers up-to-date with what happens on your blog!</p>
+<p>Keep your followers up-to-date with what happens on your blog!</p>
 = Features =
 * Automatic twitter status updates from your blog
 * Twitter authentication using oAuth (don't give away your twitter account password)
